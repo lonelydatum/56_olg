@@ -1,0 +1,21 @@
+@import '../../../_common/styles/common.scss';
+
+#banner{
+ width: 1000px;
+ height: 700px;
+}
+
+#olg{
+	width: 136px;
+	height: 69px;
+	@include pos(0, 631);
+}
+
+
+
+#legalBtn{	
+	@include pos(920, 634);	
+	width: 80px;
+	// opacity: 1;
+
+}
