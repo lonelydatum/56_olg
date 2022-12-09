@@ -4,6 +4,9 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var banner = document.getElementById('banner');
 var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
@@ -34,7 +37,7 @@ function init() {
 function start() {
 	var tl = init();
 
-	gsap.to(".man", { scale: .53, duration: 5 });
+	gsap.to(".man", { scale: 1.07, duration: 5 });
 
 	logo();
 
@@ -57,21 +60,23 @@ function start() {
 	tl.add(hand(), "-=.3");
 
 	tl.set(".frame2", { opacity: 1 });
-	tl.from(".txt-get-started", { duration: .3, opacity: 0 }, "+=.3");
+	tl.from(".txt-get-started", { duration: .3, opacity: 0 }, "+=.38");
 	tl.from(".olg-ca", { duration: .3, opacity: 0 }, "+=.3");
 	tl.from(['#EF_cta'], 0.5, { opacity: 0, y: "+=20'", onComplete: mouseover }, '+=.25');
 }
 
 function hand() {
 	var tl = new TimelineMax();
-	tl.from(".hand", { duration: .4, y: "+=" + size.h }, 0);
+	var obj = size.w > size.h ? { y: "+=" + size.h } : { x: "+=" + size.w };
+
+	tl.from(".hand", _extends({ duration: .3 }, obj), 0);
 	tl.from(".t2a", { duration: .4, x: "-=" + size.w }, 0);
 	tl.to(".t2a", { duration: .3, opacity: 0, x: "+=100" }, "+=" + READ.t2a);
 	tl.from(".t2b", { duration: .4, opacity: 0, x: "-=100" });
 
 	tl.add("t2", "+=" + READ.t2b);
 	tl.to(".t2b", { duration: .2, opacity: 0 }, "t2");
-	tl.to(".hand", { duration: .3, opacity: 0, y: "+=100" }, "t2");
+	tl.to(".hand", _extends({ duration: .25, opacity: 0 }, obj), "t2");
 	return tl;
 }
 
@@ -117,7 +122,7 @@ exports.start = start;
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
 gsap.set("#EF_cta", { x: -80, y: -310, transformOrigin: "160px 620px" });
-gsap.set(".man", { x: -150, y: -125, transformOrigin: "300px 250px" });
+// gsap.set(".man", {x:-150, y:-125, transformOrigin:"300px 250px"})
 (0, _commonJsCommonJs.start)();
 
 module.exports = {};

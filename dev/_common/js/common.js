@@ -39,7 +39,7 @@ function init(){
 function start(){
 	const tl = init()
 	
-	gsap.to(".man", {scale:.53, duration:5})
+	gsap.to(".man", {scale:1.07, duration:5})
 
 
 	logo()	
@@ -64,7 +64,7 @@ function start(){
 	tl.add(hand(), "-=.3")
 
 	tl.set(".frame2", {opacity:1})
-	tl.from(".txt-get-started", {duration:.3, opacity:0}, "+=.3")
+	tl.from(".txt-get-started", {duration:.3, opacity:0}, "+=.38")
 	tl.from(".olg-ca", {duration:.3, opacity:0}, "+=.3")	
 	tl.from(['#EF_cta'], 0.5, {opacity:0, y:"+=20'", onComplete:mouseover}, '+=.25');
 }
@@ -72,14 +72,16 @@ function start(){
 
 function hand(){
 	var tl = new TimelineMax()	
-	tl.from(".hand", {duration:.4,  y:`+=${size.h}`}, 0)
+	const obj = size.w>size.h ? {y:`+=${size.h}`}: {x:`+=${size.w}`}
+
+	tl.from(".hand", {duration:.3, ...obj }, 0)
 	tl.from(".t2a", {duration:.4,  x:`-=${size.w}`}, 0)
 	tl.to(".t2a", {duration:.3, opacity:0, x:"+=100"}, `+=${READ.t2a}`)
 	tl.from(".t2b", {duration:.4, opacity:0, x:"-=100"})
 
 	tl.add("t2", `+=${READ.t2b}`)
 	tl.to(".t2b", {duration:.2, opacity:0}, "t2")
-	tl.to(".hand", {duration:.3, opacity:0, y:"+=100"}, "t2")
+	tl.to(".hand", {duration:.25, opacity:0, ...obj}, "t2")
 	return tl
 }
 
