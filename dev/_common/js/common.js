@@ -71,16 +71,18 @@ function start(data){
 
 	tl.add(tlHideOLG, "-=.7")
 	
-
+	tl.add("test")
 	tl.to("#GL_blueWedge", {y:olgY, duration:.13}, "-=.4")
 	tl.to("#GL_blueWedge", {y:0, duration:.5})	
 	tl.add(logo(), "-=.4")
 
-
-	tl.set(".frame2", {opacity:1})
-	tl.from(".txt-get-started", {duration:.5, opacity:0}, "-=2")
+	
+	tl.set(".frame2", {opacity:1}, "-=.8")
+	tl.from(".txt-get-started", {duration:.5, opacity:0}, "-=.8")
 	tl.from(".olg-ca", {duration:.3, opacity:0}, "+=.5")	
 	tl.from(['#EF_cta'], 0.5, {opacity:0, y:"+=20'", onComplete:mouseover}, '+=.25');
+
+	// tl.play("test")
 }
 
 
