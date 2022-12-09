@@ -36,10 +36,10 @@ function init() {
 
 var data_ = {};
 
-function start() {
-	var data = arguments.length <= 0 || arguments[0] === undefined ? { manScale: true, olgY: 80, ball_time: .5, ball_ease: 4.5 } : arguments[0];
+function start(data) {
 
-	data_ = data;
+	data_ = _extends({ manScale: true, olgY: 80, ball_time: .5, ball_ease: 4.5 }, data);
+	console.log(data_);
 	var _data_ = data_;
 	var manScale = _data_.manScale;
 	var olgY = _data_.olgY;
@@ -58,6 +58,8 @@ function start() {
 	tl.add("t1", "+=" + READ.t1);
 	tl.to([".t1", ".man"], { duration: .2, opacity: 0 }, "t1");
 
+	tl.add(hand(), "+=.3");
+
 	// const tlHideOLG = new TimelineMax()
 	// tlHideOLG.set(['#triangleRed'], {attr:{points:"5.76 240.21 17.19 240.26 55.04 240.26 5.76 240.21"}, duration: 0.01, delay:0});
 	// tlHideOLG.set('#GL_playForOntario', {opacity:0})
@@ -69,8 +71,6 @@ function start() {
 	// tl.to("#GL_blueWedge", {y:olgY, duration:.3}, "-=.2")
 	// tl.to("#GL_blueWedge", {y:0, duration:.5}, "+=.3")	
 	// tl.add(logo(), "-=.4")
-
-	tl.add(hand(), "+=.3");
 
 	tl.set(".frame2", { opacity: 1 });
 	tl.from(".txt-get-started", { duration: .3, opacity: 0 }, "+=.38");
