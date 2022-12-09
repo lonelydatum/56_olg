@@ -34,10 +34,22 @@ function init() {
 	return tl;
 }
 
+var data_ = {};
+
 function start() {
+	var data = arguments.length <= 0 || arguments[0] === undefined ? { manScale: true, olgY: 80 } : arguments[0];
+
+	data_ = data;
+	var _data_ = data_;
+	var manScale = _data_.manScale;
+	var olgY = _data_.olgY;
+
+	console.log(olgY);
 	var tl = init();
 
-	gsap.to(".man", { scale: 1.07, duration: 5 });
+	if (manScale) {
+		gsap.to(".man", { scale: 1.07, duration: 5 });
+	}
 
 	logo();
 
@@ -48,12 +60,12 @@ function start() {
 	var tlHideOLG = new TimelineMax();
 	tlHideOLG.set(['#triangleRed'], { attr: { points: "5.76 240.21 17.19 240.26 55.04 240.26 5.76 240.21" }, duration: 0.01, delay: 0 });
 	tlHideOLG.set('#GL_playForOntario', { opacity: 0 });
-	tlHideOLG.set(['.group-O'], { y: 80 });
-	tlHideOLG.set(['.group-L'], { y: 80 });
-	tlHideOLG.set(['.group-G'], { y: 80 });
+	tlHideOLG.set(['.group-O'], { y: olgY });
+	tlHideOLG.set(['.group-L'], { y: olgY });
+	tlHideOLG.set(['.group-G'], { y: olgY });
 	tl.add(tlHideOLG, "t1");
 
-	tl.to("#GL_blueWedge", { y: 100, duration: .3 }, "-=.2");
+	tl.to("#GL_blueWedge", { y: olgY, duration: .3 }, "-=.2");
 	tl.to("#GL_blueWedge", { y: 0, duration: .5 }, "+=.3");
 	tl.add(logo(), "-=.4");
 
@@ -91,12 +103,16 @@ function mouseover(e) {
 function logo1() {}
 
 function logo() {
+	var _data_2 = data_;
+	var manScale = _data_2.manScale;
+	var olgY = _data_2.olgY;
+
 	gsap.set(['#GL_logo'], { y: -6, x: 1 });
 	var tl = new TimelineMax();
 	tl.set('#GL_playForOntario', { opacity: 0 });
-	tl.set(['.group-O'], { y: 80 });
-	tl.set(['.group-L'], { y: 80 });
-	tl.set(['.group-G'], { y: 80 });
+	tl.set(['.group-O'], { y: olgY });
+	tl.set(['.group-L'], { y: olgY });
+	tl.set(['.group-G'], { y: olgY });
 	tl.set(['#triangleRed'], { attr: { points: "5.76 240.21 17.19 240.26 55.04 240.26 5.76 240.21" }, duration: 0.01, delay: 0 });
 	tl.to('#triangleRed', { delay: 0.25, duration: .5, attr: { points: "17.19 202.41 17.19 240.26 55.04 240.26 17.19 202.41" } });
 
@@ -121,22 +137,8 @@ exports.start = start;
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-function start() {
-	var tl = (0, _commonJsCommonJs.init)();
-	tl.add((0, _commonJsCommonJs.cluserF)());
-
-	tl.to([".o-shadow", ".proline", ".o"], { duration: .1, opacity: 0 }, "+=.1");
-	tl.from(".bring", { duration: .25, x: "-=100", opacity: 0 });
-	tl.add((0, _commonJsCommonJs.chev)());
-
-	tl.to(".chev_1a", { duration: .3, opacity: 0 }, "+=.1");
-	tl.from(".proline-end", { duration: .3, opacity: 0 }, "+=.1");
-	tl.to(".chev_1b", { duration: .3, opacity: 0 }, "+=.3");
-
-	tl.add((0, _commonJsCommonJs.bb2)());
-}
-
-start();
+gsap.set("#EF_cta", { x: -150, y: -360, transformOrigin: "300px 720px" });
+(0, _commonJsCommonJs.start)();
 
 module.exports = {};
 

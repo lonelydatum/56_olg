@@ -203,6 +203,18 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
+.t1, .t2a, .t2b {
+  z-index: 10;
+}
+
+#GL_blueWedge {
+  z-index: 9;
+}
+
+#GL_logo, #GL_playForOntario {
+  z-index: 10;
+}
+
 #banner {
   width: 300px;
   height: 250px;
