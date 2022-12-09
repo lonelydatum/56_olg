@@ -19,7 +19,23 @@
 
 
 #legalBtn{	
-	@include pos(650, 45);	
+	@include pos(680, -5);	
 	width: 80px;
 	// opacity: 1 !important;
 }
+
+
+
+
+#GL_logo{
+	svg{
+		position: absolute;
+		width: 570px;
+		height: 370px;
+		top: -252px;
+		left: 0px;
+	}
+}
+
+
+#L-letter, #L-circ, #G-circ, #G-letter {transform: translateX(-1px);}

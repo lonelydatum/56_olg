@@ -133,11 +133,12 @@ exports.init = init;
 exports.start = start;
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-(0, _commonJsCommonJs.HOR)();
+gsap.set("#EF_cta", { x: -550, y: -45, transformOrigin: "1100px 90px" });
+(0, _commonJsCommonJs.start)({ manScale: false, olgY: 60 });
 
 module.exports = {};
 

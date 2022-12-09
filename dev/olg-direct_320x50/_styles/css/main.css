@@ -220,19 +220,6 @@ canvas, .text, .frame, .outline, img {
   height: 50px;
 }
 
-#olg {
-  width: 51px;
-  height: 47px;
-  -webkit-transform: translate(0px, 15px);
-  -ms-transform: translate(0px, 15px);
-  transform: translate(0px, 15px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
 #legalBtn {
   -webkit-transform: translate(290px, 0px);
   -ms-transform: translate(290px, 0px);

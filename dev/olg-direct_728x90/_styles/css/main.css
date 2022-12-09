@@ -234,15 +234,29 @@ canvas, .text, .frame, .outline, img {
 }
 
 #legalBtn {
-  -webkit-transform: translate(650px, 45px);
-  -ms-transform: translate(650px, 45px);
-  transform: translate(650px, 45px);
+  -webkit-transform: translate(680px, -5px);
+  -ms-transform: translate(680px, -5px);
+  transform: translate(680px, -5px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
   width: 80px;
+}
+
+#GL_logo svg {
+  position: absolute;
+  width: 570px;
+  height: 370px;
+  top: -252px;
+  left: 0px;
+}
+
+#L-letter, #L-circ, #G-circ, #G-letter {
+  -webkit-transform: translateX(-1px);
+  -ms-transform: translateX(-1px);
+  transform: translateX(-1px);
 }
 
 /*# sourceMappingURL=main.css.map */

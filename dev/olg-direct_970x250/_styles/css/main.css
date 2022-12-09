@@ -220,19 +220,6 @@ canvas, .text, .frame, .outline, img {
   height: 250px;
 }
 
-#olg {
-  width: 158px;
-  height: 81px;
-  -webkit-transform: translate(-2px, 169px);
-  -ms-transform: translate(-2px, 169px);
-  transform: translate(-2px, 169px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
 #legalBtn {
   -webkit-transform: translate(820px, 185px);
   -ms-transform: translate(820px, 185px);
@@ -244,6 +231,20 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
   width: 140px;
   height: 50px;
+}
+
+#GL_logo svg {
+  position: absolute;
+  width: 1474px;
+  height: 1000px;
+  top: -441px;
+  left: 0px;
+}
+
+#L-letter, #L-circ, #G-circ, #G-letter {
+  -webkit-transform: translateX(-1px);
+  -ms-transform: translateX(-1px);
+  transform: translateX(-1px);
 }
 
 /*# sourceMappingURL=main.css.map */
