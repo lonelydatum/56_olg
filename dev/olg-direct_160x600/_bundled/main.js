@@ -74,8 +74,8 @@ function start(data) {
 	tl.add(logo(), "-=.4");
 
 	tl.set(".frame2", { opacity: 1 });
-	tl.from(".txt-get-started", { duration: .3, opacity: 0 }, "+=.38");
-	tl.from(".olg-ca", { duration: .3, opacity: 0 }, "+=.3");
+	tl.from(".txt-get-started", { duration: .5, opacity: 0 }, "-=2");
+	tl.from(".olg-ca", { duration: .3, opacity: 0 }, "+=.5");
 	tl.from(['#EF_cta'], 0.5, { opacity: 0, y: "+=20'", onComplete: mouseover }, '+=.25');
 }
 
