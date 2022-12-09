@@ -8,9 +8,9 @@ gsap.defaults({
 
 
 const READ = {
-	t1: 3,
-	t2a: 2.3,
-	t2b: 2,
+	t1: 3.5,
+	t2a: 2.8,
+	t2b: 2.3,
 }
 
 
@@ -50,7 +50,7 @@ function start(data={manScale:true, olgY:80}){
 
 	logo()	
 	
-	tl.from(".t1", {duration:.3, opacity:0, x:"-=100"}, "+=.7")
+	tl.from(".t1", {duration:.3, opacity:0, x:"-=100"}, "+=.9")
 	tl.add("t1", `+=${READ.t1}`)
 	tl.to([".t1", ".man"], {duration:.2, opacity:0}, "t1")
 
@@ -67,7 +67,7 @@ function start(data={manScale:true, olgY:80}){
 	// tl.add(logo(), "-=.4")
 	
 
-	tl.add(hand(), "-=.3")
+	tl.add(hand(), "+=.3")
 
 	tl.set(".frame2", {opacity:1})
 	tl.from(".txt-get-started", {duration:.3, opacity:0}, "+=.38")
@@ -86,8 +86,8 @@ function hand(){
 	tl.from(".t2b", {duration:.4, opacity:0, x:"-=100"})
 
 	tl.add("t2", `+=${READ.t2b}`)
-	tl.to(".t2b", {duration:.2, opacity:0}, "t2")
-	tl.to(".hand", {duration:.25, opacity:0, ...obj}, "t2")
+	tl.to(".t2b", {duration:.45, opacity:0, ...obj}, "t2")
+	tl.to(".hand", {duration:.35, opacity:0, ...obj}, "t2")
 	return tl
 }
 
