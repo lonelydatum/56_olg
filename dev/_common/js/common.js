@@ -50,7 +50,7 @@ function start(data={manScale:true, olgY:80}){
 
 	logo()	
 	
-	tl.from(".t1", {duration:.3, opacity:0, x:"-=100"}, "+=.9")
+	tl.from(".t1", {duration:.3, opacity:0, x:"-=100"}, "+=.75")
 	tl.add("t1", `+=${READ.t1}`)
 	tl.to([".t1", ".man"], {duration:.2, opacity:0}, "t1")
 
