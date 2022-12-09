@@ -72,7 +72,7 @@ function start(data){
 	tl.add(tlHideOLG, "-=.7")
 	
 
-	tl.to("#GL_blueWedge", {y:olgY, duration:.3}, "-=.4")
+	tl.to("#GL_blueWedge", {y:olgY, duration:.13}, "-=.4")
 	tl.to("#GL_blueWedge", {y:0, duration:.5})	
 	tl.add(logo(), "-=.4")
 

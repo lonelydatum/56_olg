@@ -69,7 +69,7 @@ function start(data) {
 
 	tl.add(tlHideOLG, "-=.7");
 
-	tl.to("#GL_blueWedge", { y: olgY, duration: .3 }, "-=.4");
+	tl.to("#GL_blueWedge", { y: olgY, duration: .13 }, "-=.4");
 	tl.to("#GL_blueWedge", { y: 0, duration: .5 });
 	tl.add(logo(), "-=.4");
 
@@ -143,7 +143,7 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 
 document.getElementById("man").className = "retina man";
 gsap.set("#EF_cta", { x: -160, y: -25, transformOrigin: "320px 50px" });
-(0, _commonJsCommonJs.start)({ manScale: false, olgY: 50 });
+(0, _commonJsCommonJs.start)({ manScale: false, olgY: 70 });
 
 module.exports = {};
 
