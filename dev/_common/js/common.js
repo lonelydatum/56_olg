@@ -54,17 +54,17 @@ function start(data={manScale:true, olgY:80}){
 	tl.add("t1", `+=${READ.t1}`)
 	tl.to([".t1", ".man"], {duration:.2, opacity:0}, "t1")
 
-	const tlHideOLG = new TimelineMax()
-	tlHideOLG.set(['#triangleRed'], {attr:{points:"5.76 240.21 17.19 240.26 55.04 240.26 5.76 240.21"}, duration: 0.01, delay:0});
-	tlHideOLG.set('#GL_playForOntario', {opacity:0})
-	tlHideOLG.set(['.group-O'], { y:olgY})
-	tlHideOLG.set(['.group-L'], { y:olgY})
-	tlHideOLG.set(['.group-G'], { y:olgY})
-	tl.add(tlHideOLG, "t1")	
+	// const tlHideOLG = new TimelineMax()
+	// tlHideOLG.set(['#triangleRed'], {attr:{points:"5.76 240.21 17.19 240.26 55.04 240.26 5.76 240.21"}, duration: 0.01, delay:0});
+	// tlHideOLG.set('#GL_playForOntario', {opacity:0})
+	// tlHideOLG.set(['.group-O'], { y:olgY})
+	// tlHideOLG.set(['.group-L'], { y:olgY})
+	// tlHideOLG.set(['.group-G'], { y:olgY})
+	// tl.add(tlHideOLG, "t1")	
 
-	tl.to("#GL_blueWedge", {y:olgY, duration:.3}, "-=.2")
-	tl.to("#GL_blueWedge", {y:0, duration:.5}, "+=.3")	
-	tl.add(logo(), "-=.4")
+	// tl.to("#GL_blueWedge", {y:olgY, duration:.3}, "-=.2")
+	// tl.to("#GL_blueWedge", {y:0, duration:.5}, "+=.3")	
+	// tl.add(logo(), "-=.4")
 	
 
 	tl.add(hand(), "-=.3")
