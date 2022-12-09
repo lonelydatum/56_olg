@@ -221,9 +221,9 @@ canvas, .text, .frame, .outline, img {
 }
 
 #legalBtn {
-  -webkit-transform: translate(820px, 185px);
-  -ms-transform: translate(820px, 185px);
-  transform: translate(820px, 185px);
+  -webkit-transform: translate(900px, 0px);
+  -ms-transform: translate(900px, 0px);
+  transform: translate(900px, 0px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
