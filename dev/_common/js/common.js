@@ -36,10 +36,10 @@ function init(){
 let data_ = {}
 
 
-function start(data={manScale:true, olgY:80}){
+function start(data={manScale:true, olgY:80, ball_time:.5, ball_ease:4.5}){
 	data_ = data
-	const {manScale, olgY} = data_
-	console.log(olgY);
+	const {manScale, olgY, ball_time, ball_ease} = data_
+	
 	const tl = init()
 	
 	if(manScale){
@@ -105,7 +105,8 @@ function logo1(){
 }
 
 function logo(){
-	const {manScale, olgY} = data_
+	const {manScale, olgY, ball_time, ball_ease} = data_
+
 	gsap.set([ '#GL_logo' ], {y:-6, x:1});
 	var tl = new TimelineMax()
 	tl.set('#GL_playForOntario', {opacity:0})
@@ -119,9 +120,9 @@ function logo(){
 	
 	
 
-	tlBall.to(['.group-O'], {duration:0.5, y:0, ease:'back.out(4.5)'})
-	tlBall.to(['.group-L'], {duration:0.5, y:0, ease:'back.out(4.5)'}, '-=0.45')
-	tlBall.to(['.group-G'], {duration:0.5, y:0, ease:'back.out(4.5)'}, '-=0.45')
+	tlBall.to(['.group-O'], {duration:ball_time, y:0, ease:`back.out(${ball_ease})`})
+	tlBall.to(['.group-L'], {duration:ball_time, y:0, ease:`back.out(${ball_ease})`}, '-=0.45')
+	tlBall.to(['.group-G'], {duration:ball_time, y:0, ease:`back.out(${ball_ease})`}, '-=0.45')
 	
 	tlBall.to(['#GL_playForOntario'], {opacity:1, duration:0.4, }, .6)
 	tl.add(tlBall, .2)

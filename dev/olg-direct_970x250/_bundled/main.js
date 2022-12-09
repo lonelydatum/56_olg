@@ -37,14 +37,15 @@ function init() {
 var data_ = {};
 
 function start() {
-	var data = arguments.length <= 0 || arguments[0] === undefined ? { manScale: true, olgY: 80 } : arguments[0];
+	var data = arguments.length <= 0 || arguments[0] === undefined ? { manScale: true, olgY: 80, ball_time: .5, ball_ease: 4.5 } : arguments[0];
 
 	data_ = data;
 	var _data_ = data_;
 	var manScale = _data_.manScale;
 	var olgY = _data_.olgY;
+	var ball_time = _data_.ball_time;
+	var ball_ease = _data_.ball_ease;
 
-	console.log(olgY);
 	var tl = init();
 
 	if (manScale) {
@@ -106,6 +107,8 @@ function logo() {
 	var _data_2 = data_;
 	var manScale = _data_2.manScale;
 	var olgY = _data_2.olgY;
+	var ball_time = _data_2.ball_time;
+	var ball_ease = _data_2.ball_ease;
 
 	gsap.set(['#GL_logo'], { y: -6, x: 1 });
 	var tl = new TimelineMax();
@@ -118,9 +121,9 @@ function logo() {
 
 	var tlBall = new TimelineMax();
 
-	tlBall.to(['.group-O'], { duration: 0.5, y: 0, ease: 'back.out(4.5)' });
-	tlBall.to(['.group-L'], { duration: 0.5, y: 0, ease: 'back.out(4.5)' }, '-=0.45');
-	tlBall.to(['.group-G'], { duration: 0.5, y: 0, ease: 'back.out(4.5)' }, '-=0.45');
+	tlBall.to(['.group-O'], { duration: ball_time, y: 0, ease: "back.out(" + ball_ease + ")" });
+	tlBall.to(['.group-L'], { duration: ball_time, y: 0, ease: "back.out(" + ball_ease + ")" }, '-=0.45');
+	tlBall.to(['.group-G'], { duration: ball_time, y: 0, ease: "back.out(" + ball_ease + ")" }, '-=0.45');
 
 	tlBall.to(['#GL_playForOntario'], { opacity: 1, duration: 0.4 }, .6);
 	tl.add(tlBall, .2);
@@ -139,7 +142,7 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 
 // document.getElementById("man").className = "retina man"
 gsap.set("#EF_cta", { x: -475, y: -200, transformOrigin: "950px 400px" });
-(0, _commonJsCommonJs.start)({ manScale: false, olgY: 135 });
+(0, _commonJsCommonJs.start)({ manScale: false, olgY: 135, ball_time: .5, ball_ease: 3.1 });
 
 module.exports = {};
 
